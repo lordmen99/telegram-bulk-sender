@@ -36,9 +36,30 @@ Puis, installer `node-gyp` qui permet de compiler des modules natifs pour `Node.
 npm install -g node-gyp
 ```
 
-Enfin, installer le module `airgram` :
+Installer les dépendances :
+
 ```bash
-npm install airgram --save
+npm ci
+```
+
+# Configuration
+
+```bash
+# Compile the assets in public/build
+npm run build
+# Create an empty storage file
+cp data/defaultSettings.json data/settings.json
+```
+
+Replace environment variables `API_ID` et `API_HASH` by writing into `.env` file to by creating a `.env.local` file whose variables will override those defined in `.env`.
+
+# Démarrer
+
+```bash
+# Production mode
+npm run prod
+# Development mode, will be restarted each time a file is modified
+npm run dev
 ```
 
 # Liens utiles
